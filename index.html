@@ -5,10 +5,11 @@
 <script>
 var d = new Date();
 var resp = '';
+var tiempo = 12 - new Date()+1;
 if(d.getMonth() == 4){
 resp = 'SI !!!';
 }else{
-resp = 'NO!! TODAVIA NO TE PODES IR<br>TE TENES QUE QUEDAR EN ESTE PAIS DE MIERDA !!!';
+resp = 'NO!! TODAVIA NO TE PODES IR<br>TE TENES QUE QUEDAR EN ESTE PAIS DE MIERDA ' + tiempo + ' MESES MAS!!!';
 }
 document.getElementById("YaEstamosEnMayo").innerHTML = resp;
 </script>
