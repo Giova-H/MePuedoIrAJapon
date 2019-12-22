@@ -3,13 +3,24 @@
 <body>
 <p id="YaEstamosEnMayo"></p>
 <script>
-var d = new Date();
+function cuantosDias(CurrentDate)
+{
+	var TYear = CurrentDate.getFullYear();
+    var TDay = new Date("May, 07, 2020");
+    TDay.getFullYear(TYear);
+    var contarDias =(TDay-CurrentDate)/(1000*60*60*24);
+    contarDias = Math.round(contarDias); 
+    return(contarDias);
+}
+var hoy = new Date();
+var cuantoFalta = cuantosDias(hoy);
 var resp = '';
-var tiempo = 12 - new Date()+1;
-if(d.getMonth() == 4){
-resp = 'SI !!!';
-}else{
-resp = 'NO!! TODAVIA NO TE PODES IR<br>TE TENES QUE QUEDAR EN ESTE PAIS DE MIERDA ' + tiempo + ' MESES MAS!!!';
+if(cuantoFalta == 0){
+resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="Japon.jpg" alt="Japon">';
+}else if(cuantoFalta < 6 && cuantoFalta > 0){
+resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
+}else if(cuantoFalta > 6){
+resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS EN ESTE PAIS DE MIERDA!!!<br><br><img src="argentina.jpg" alt="argentina">';
 }
 document.getElementById("YaEstamosEnMayo").innerHTML = resp;
 </script>
