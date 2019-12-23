@@ -12,7 +12,7 @@ function cuantosDias(CurrentDate)
     contarDias = Math.round(contarDias); 
     return(contarDias);
 }
-var img = ["argentina.jpg","30.jpg","argentina2.jpg","piquete.jpg","viva peron.gif","peron es bueno.gif"];
+var img = ["argentina.jpg","30.jpg","argentina2.jpg","piquete.jpg","viva peron.gif","peron es bueno.gif","peronismo a full.jpg"];
 var rand = Math.floor(Math.random() * 6);
 console.log(img[rand]);
 var hoy = new Date();
@@ -23,7 +23,7 @@ if(cuantoFalta == 0){
 }else if(cuantoFalta < 6 && cuantoFalta > 0){
 	resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
 }else if(cuantoFalta > 6){
-	resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS EN ESTE PAIS DE MIERDA!!!<br><br><img src="' + img[rand] + '" alt="argentina">';
+	resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina">';
 }
 document.getElementById("YaEstamosEnMayo").innerHTML = resp;
 </script>
