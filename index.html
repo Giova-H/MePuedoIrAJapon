@@ -3,8 +3,7 @@
 <body>
 <p id="YaEstamosEnMayo"></p>
 <script>
-function cuantosDias(CurrentDate)
-{
+function cuantosDias(CurrentDate){
 	var TYear = CurrentDate.getFullYear();
     var TDay = new Date("May, 07, 2020");
     TDay.getFullYear(TYear);
@@ -13,19 +12,28 @@ function cuantosDias(CurrentDate)
     return(contarDias);
 }
 var img = ["argentina.jpg","30.jpg","argentina2.jpg","piquete.jpg","viva peron.gif","peron es bueno.gif","peronismo a full.jpg"];
-var rand = Math.floor(Math.random() * 7);
-console.log(img[rand]);
 var hoy = new Date();
 var cuantoFalta = cuantosDias(hoy);
 var resp = '';
-if(cuantoFalta == 0){
-	resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="Japon.jpg" alt="Japon">';
-}else if(cuantoFalta < 6 && cuantoFalta > 0){
-	resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
-}else if(cuantoFalta > 6){
-	resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina">';
+function cambiaImg(){
+var rand = Math.floor(Math.random() * 7);
+	if(cuantoFalta == 0){
+		resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="Japon.jpg" alt="Japon">';
+	}else if(cuantoFalta < 6 && cuantoFalta > 0){
+		resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
+	}else if(cuantoFalta > 6){
+		resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina" id="no">';
+	}
 }
+cambiaImg();
 document.getElementById("YaEstamosEnMayo").innerHTML = resp;
+setTimeout(myTimer(), 2000);
+var myVar = setInterval(myTimer, 3000);
+function myTimer(){
+  document.getElementById("YaEstamosEnMayo").innerHTML = resp;
+  cambiaImg();
+}
+
 </script>
 </body>
 </html>
