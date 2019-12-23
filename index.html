@@ -12,15 +12,18 @@ function cuantosDias(CurrentDate)
     contarDias = Math.round(contarDias); 
     return(contarDias);
 }
+var img = ["argentina.jpg","30.jpg","argentina2.jpg","piquete.jpg"];
+var rand = Math.floor(Math.random() * 4);
+console.log(img[rand]);
 var hoy = new Date();
 var cuantoFalta = cuantosDias(hoy);
 var resp = '';
 if(cuantoFalta == 0){
-resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="Japon.jpg" alt="Japon">';
+	resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="Japon.jpg" alt="Japon">';
 }else if(cuantoFalta < 6 && cuantoFalta > 0){
-resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
+	resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
 }else if(cuantoFalta > 6){
-resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS EN ESTE PAIS DE MIERDA!!!<br><br><img src="argentina.jpg" alt="argentina">';
+	resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS EN ESTE PAIS DE MIERDA!!!<br><br><img src="' + img[rand] + '" alt="argentina">';
 }
 document.getElementById("YaEstamosEnMayo").innerHTML = resp;
 </script>
