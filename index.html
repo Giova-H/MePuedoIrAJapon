@@ -18,11 +18,11 @@ var resp = '';
 function cambiaImg(){
 var rand = Math.floor(Math.random() * 7);
 	if(cuantoFalta == 0){
-		resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="Japon.jpg" alt="Japon">';
+		resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="hanabi.gif" alt="Japon">';
 	}else if(cuantoFalta < 6 && cuantoFalta > 0){
 		resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
 	}else if(cuantoFalta > 6){
-		resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina" id="no">';
+		resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina" id="no" height="25%" width="30%">';
 	}
 }
 cambiaImg();
@@ -33,7 +33,6 @@ function myTimer(){
   document.getElementById("YaEstamosEnMayo").innerHTML = resp;
   cambiaImg();
 }
-
 </script>
 </body>
 </html>
