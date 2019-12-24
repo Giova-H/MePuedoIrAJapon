@@ -3,31 +3,31 @@
 <body>
 <p id="YaEstamosEnMayo"></p>
 <script>
-function cuantosDias(CurrentDate){
-	var TYear = CurrentDate.getFullYear();
-    var TDay = new Date("May, 07, 2020");
-    TDay.getFullYear(TYear);
-    var contarDias =(TDay-CurrentDate)/(1000*60*60*24);
-    contarDias = Math.round(contarDias); 
-    return(contarDias);
-}
+//date diff
+var date1 = new Date("12/24/2019");
+var date2 = new Date("05/06/2020");
+var Difference_In_Time = date2.getTime() - date1.getTime();
+var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+//img
 var img = ["argentina.jpg","30.jpg","argentina2.jpg","piquete.jpg","viva peron.gif","peron es bueno.gif","peronismo a full.jpg"];
-var hoy = new Date();
-var cuantoFalta = cuantosDias(hoy);
+//resp text
 var resp = '';
+//cambiar el rand
 function cambiaImg(){
 var rand = Math.floor(Math.random() * 7);
-	if(cuantoFalta == 0){
+	if(Difference_In_Days == 0){
 		resp = 'SI !!! ANDATE DE ESTE PAIS QUE ES UNA PORQUERIA !!!<br><br><img src="hanabi.gif" alt="Japon">';
-	}else if(cuantoFalta < 6 && cuantoFalta > 0){
-		resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ cuantoFalta +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
-	}else if(cuantoFalta > 6){
-		resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + cuantoFalta + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina" id="no" height="25%" width="30%">';
+	}else if(Difference_In_Days < 6 && Difference_In_Days > 0){
+		resp = 'YA CASI SOS LIBRE !!!<br>SOLO TENES QUE AGUANTAR <strong>'+ Difference_In_Days +'</strong> DIAS MAS !!!<br> <img src="casi en japon.jpg" alt="casi en japon">';
+	}else if(Difference_In_Days > 6){
+		resp = 'NO!! TODAVIA NO TE PODES IR<br><br>TE TENES QUE QUEDAR <strong>' + Difference_In_Days + '</strong> DIAS MAS!!!<br><h1>PAGA MAS IMPUESTOS !!!</h1><img src="' + img[rand] + '" alt="argentina" id="no" height="25%" width="30%">';
 	}
 }
+//primer display
 cambiaImg();
 document.getElementById("YaEstamosEnMayo").innerHTML = resp;
 setTimeout(myTimer(), 3000);
+//cambiar cada 3 seg
 var myVar = setInterval(myTimer, 3000);
 function myTimer(){
   document.getElementById("YaEstamosEnMayo").innerHTML = resp;
