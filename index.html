@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-<body onload="abrirPag()">>
+<body>
 <p id="YaEstamosEnMayo"></p>
 
-<iframe id="myFrame" src="MARCHA PERONISTA.mp4"></iframe>
+<audio src="MARCHA PERONISTA.mp3" id="peronista" loop="loop"></audio>
 
 <script>
+window.onload= function(){
+document.getElementById("peronista").play();
+}
 //javascript es una mierda con fechas
 var hoy = new Date();
 var dd = hoy.getDate();
@@ -41,17 +44,14 @@ var rand = Math.floor(Math.random() * cantImg);
 }
 
 //primer display
-
-function abrirPag() {
-	cambiaImg();
-	document.getElementById("YaEstamosEnMayo").innerHTML = resp;
-	setTimeout(myTimer(), 3000);
+cambiaImg();
+document.getElementById("YaEstamosEnMayo").innerHTML = resp;
+setTimeout(myTimer(), 3000);
 //cambiar cada 3 seg
-	var myVar = setInterval(myTimer, 3000);
-	function myTimer(){
-		document.getElementById("YaEstamosEnMayo").innerHTML = resp;
-		cambiaImg();
-	}
+var myVar = setInterval(myTimer, 3000);
+function myTimer(){
+	document.getElementById("YaEstamosEnMayo").innerHTML = resp;
+	cambiaImg();
 }
 </script>
 </body>
